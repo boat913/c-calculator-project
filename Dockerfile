@@ -13,7 +13,7 @@ WORKDIR C:\Users\sec04\work\C-Coding\c-calculator-project
 COPY include ./include
 COPY src ./src
 COPY tests ./tests
-COPY Makefile ./
+COPY makefile ./
 
 RUN make
 RUN make test
