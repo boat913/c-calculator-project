@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+WORKDIR C:\Users\sec04\work\C-Coding\c-calculator-project
 
 COPY include ./include
 COPY src ./src
