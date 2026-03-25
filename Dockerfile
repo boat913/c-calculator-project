@@ -8,15 +8,18 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-WORKDIR C:\Users\sec04\work\C-Coding\c-calculator-project
+WORKDIR /app
 
 COPY include ./include
 COPY src ./src
 COPY tests ./tests
 COPY Makefile ./
 
-RUN make
-RUN make test
+RUN make CFLAGS="-Wall -Wextra -std=c11 -Iinclude"
+RUN ls -R /app
+RUN make test CFLAGS="-Wall -Wextra -std=c11 -Iinclude"
+
+RUN ls -l /app/calculator
 
 # 2단계: 실행 스테이지
 FROM ubuntu:24.04
